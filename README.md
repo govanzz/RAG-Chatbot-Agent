@@ -73,6 +73,8 @@ On macOS/Linux:
 cp .env.example .env
 ```
 
+For a complete setup guide on a fresh computer, see [RUN_ON_OTHER_SYSTEMS.md](RUN_ON_OTHER_SYSTEMS.md).
+
 ## Ingest Website Content
 
 Run:
@@ -117,7 +119,7 @@ ollama serve
 
 ## Repository Link
 
-Public GitHub repository link: to be added after publishing.
+Public GitHub repository link: https://github.com/govanzz/RAG-Chatbot-Agent
 
 ## Limitations
 
