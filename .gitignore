@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.streamlit/secrets.toml
+
+data/raw_pages/*
+!data/raw_pages/.gitkeep
+vectorstore/*
+!vectorstore/.gitkeep
+logs/*
+!logs/.gitkeep
