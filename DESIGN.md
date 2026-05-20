@@ -19,6 +19,8 @@ The assistant is designed to run without paid APIs and without sending user ques
 
 The scraper only visits the URLs listed in `config.py`. The current configuration contains 28 official Mandai pages, including top-level park pages, visit pages, ticket pages, transport pages, know-before-you-go pages, and selected activity or zone pages. It does not crawl links or discover new pages. Requests use a clear user-agent, timeout, and delay between pages. Each scraped page is saved as a `.txt` file in `data/raw_pages/` with title, source URL, scrape timestamp, headings, and cleaned body text.
 
+BeautifulSoup is used as the HTML parsing layer during ingestion. After `requests` downloads each page, BeautifulSoup parses the document tree so the scraper can remove non-content elements, extract the page title, collect headings, and convert meaningful page text into a cleaner plain-text format for retrieval. This is more reliable than simple string matching because it works with the structure of the HTML document.
+
 The parser removes scripts, styles, navigation, headers, footers, forms, iframes, empty lines, and repeated whitespace where possible. If one page fails, ingestion logs the failure to `logs/ingest_failures.jsonl` and continues with the remaining configured URLs.
 
 ## Chunking Strategy
